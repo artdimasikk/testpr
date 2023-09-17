@@ -1,45 +1,13 @@
-// console.log(2*3);
-// let i = 2;
-// i = -i;
-// console.log(i);
-// let x = 2, y =3;
-// console.log(y-x);
-// console.log(4**1/2);
-// let text = 3 * "2";
-// console.log(text);
-// let x = "1";
-// let y = "2";
-// console.log(+x + +y);
-// let a = 1, b=2;
-// let c = 2-(a = b+1);
-// console.log(c);
-// let a,b,c;
-// a=b=c=2+2;
-// console.log(a);
-// console.log(b);
-// console.log(c);
-// let n = 2;
-// n +=5;
-// console.log(n);
-// let a = (1+2, 3+4);
-// console.log(a);
-// console.log(true||true);
-// console.log(false||true);
-// console.log(true||false);
-// console.log(false||false);
-// let currentUser = null;
-// let defaultUser = "Andrew";
-// let name = currentUser || defaultUser || "unnamed";
-// console.log(name);
-// let x;
-// false || (x=1);
-// console.log(x);
-// console.log(true&&true);
-// console.log(false&&true);
-// console.log(true&&false);
-// console.log(false&&false);
-// let hour = 12;
-// let minute = 30;
-// if(hour == 12 && minute == 30){
-//     console.log('Сейчас 12:30');
-// }
+'use strict';
+let age = 19;
+let club;
+if (age < 18){
+    club = 'Здравствуй малыш!';
+}else if(age == 18){
+    club = 'Проходи!';
+}else if(age > 100){
+    club = 'Здравствуйте!';
+}else{
+    club = 'Какой необычный возраст!'
+}
+console.log(club);
