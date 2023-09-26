@@ -1,6 +1,3 @@
 'use strict'
-let work = (a) => {
-    let result = a*a;
-    return result;
-};
-console.log(work(3));
+let num = 1;
+console.log(num.MAX_VALUE);
