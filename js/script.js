@@ -1,29 +1,57 @@
 'use strict';
 
-let user = ["Makeenko", "Andrew", 28];
-let number = [2,100,25,12,45];
-// let user1 = user.slice(1);
-// console.log(user.length);
-// user.push(180);
-// console.log(user);
-// console.log(user.toString());
-// console.log(user.join(" "));
-// user.pop();
-// console.log(user.pop());
-// user.push(180);
-// console.log(user);
-// user.shift();
-// console.log(user);
-// user.unshift(180);
-// console.log(user);
-// delete user[0];
-// console.log(user);
-// user.splice(2,0,180,8);
-// console.log(user);
-// let family = user.concat(user1, user2, 227);
-// console.log(family);
-// console.log(user1);
-number.sort(function(a,b){
-    return 0.5 - Math.random();
-});
-console.log(number);
+// function change(x){
+//     x = x*2;
+//     console.log("x в change: ", x)
+// }
+// let y = 2;
+// console.log('y до change: ', y);
+// change(y);
+// console.log("y после change: ", y);
+
+// function change(user){
+//     user: "Anna"
+// };
+// let andrey = {
+//     name: 'Andrey'
+// };
+
+// console.log("до change: ", andrey.name);
+// change(andrey);
+// console.log("после change: ", andrey.name);
+
+// function change(array){
+//     array[0] = 8;
+// }
+
+// function changeFull(array){
+//     array = [4,5,6];
+// }
+// let numbers = [1,2,3];
+// console.log("до change: ", numbers);
+// change(numbers);
+// console.log("после change: ", numbers);
+// changeFull(numbers);
+// console.log("после changeFull: ", numbers);
+
+// let log = function(a,b,c){
+//     console.log(a,b,c);
+// };
+
+// // log(...["spread", "rest", "operator"]);
+
+// log.apply(null, ["spread", "rest", "operator"]);
+
+// let arr = ["will", "love"];
+// let arr2 = ["You", ...arr, "spread", "operator"];
+// console.log(arr2);
+
+// let birthday = [1993, 6,8];
+// let day = new Date(...birthday);
+// console.log(day);
+// console.log(birthday);
+
+let log = function(...args){
+    console.log(args);
+};
+log(1, 2, 3, 4, 5);
