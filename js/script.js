@@ -1,57 +1,43 @@
 'use strict';
-
-// function change(x){
-//     x = x*2;
-//     console.log("x в change: ", x)
+// function Person(firstName, lastName){
+//     this.firstName = firstName
+//     this.lastName = lastName
 // }
-// let y = 2;
-// console.log('y до change: ', y);
-// change(y);
-// console.log("y после change: ", y);
-
-// function change(user){
-//     user: "Anna"
-// };
-// let andrey = {
-//     name: 'Andrey'
-// };
-
-// console.log("до change: ", andrey.name);
-// change(andrey);
-// console.log("после change: ", andrey.name);
-
-// function change(array){
-//     array[0] = 8;
+// Person.prototype.getFullName = function (){
+//     return this.firstName + ' ' + this.lastName
 // }
+// let person = new Person('Andrew', 'Makeenko')
+// console.log(person);
 
-// function changeFull(array){
-//     array = [4,5,6];
-// }
-// let numbers = [1,2,3];
-// console.log("до change: ", numbers);
-// change(numbers);
-// console.log("после change: ", numbers);
-// changeFull(numbers);
-// console.log("после changeFull: ", numbers);
+function Maybe({data, status}) {
+    this.data = data
+    this.status = status
+}
 
-// let log = function(a,b,c){
-//     console.log(a,b,c);
-// };
+Maybe.prototype.apply = function (f){
+    if (this.status){
+        return new Maybe ({data: f(this.data), status: this.status})
+    }
+    return new Maybe ({data: f(this.data), status: this.status})
+}
 
-// // log(...["spread", "rest", "operator"]);
+Maybe.prototype.getOrElse = function (msg){
+    if (this.status) return this.data
+    return msg
+}
 
-// log.apply(null, ["spread", "rest", "operator"]);
+function Number(data){
+    let status = (typeof data === 'string')
+    Maybe.call(this, {data, status})
+}
+Number.prototype = Object.create(Maybe.prototype)
+function String(data){
+    let status = (typeof data === 'string')
+    Maybe.call(this, {data, status})
+}
 
-// let arr = ["will", "love"];
-// let arr2 = ["You", ...arr, "spread", "operator"];
-// console.log(arr2);
-
-// let birthday = [1993, 6,8];
-// let day = new Date(...birthday);
-// console.log(day);
-// console.log(birthday);
-
-let log = function(...args){
-    console.log(args);
-};
-log(1, 2, 3, 4, 5);
+String.prototype = Object.create(Maybe.prototype)
+const increment = num => num + 1
+const split = str => str.split('')
+let foop = 12
+foop.split('')
