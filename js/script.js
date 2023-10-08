@@ -1,43 +1,51 @@
-'use strict';
-// function Person(firstName, lastName){
-//     this.firstName = firstName
-//     this.lastName = lastName
-// }
-// Person.prototype.getFullName = function (){
-//     return this.firstName + ' ' + this.lastName
-// }
-// let person = new Person('Andrew', 'Makeenko')
-// console.log(person);
+'use strict'
+// let cat = {
+     
+// };
+// cat.name = "Roxy";
+// cat.legs = 4;
+// cat.color = "grey";
+// cat["full name"] = "Roxy, красивая кошка";
+// console.log(cat["full name"]);
 
-function Maybe({data, status}) {
-    this.data = data
-    this.status = status
-}
+// function Person (name, age){
+//     this.name = name;
+//     this.age = age;
+// }
+// let person_1 = new Person ('Andrey', 28);
+// console.log(person_1.name);
+// console.log(person_1.age);
+// Person.prototype.speciality = "менеджер";
+// console.log(person_1.speciality);
+// console.log(person_1);
 
-Maybe.prototype.apply = function (f){
-    if (this.status){
-        return new Maybe ({data: f(this.data), status: this.status})
+// let cat = {
+//     name: 'Roxy',
+//     legs: 4, 
+//     color: 'grey'
+
+// }
+// let kitten = Object.create(cat);
+// console.log(kitten.name);
+// console.log(kitten.legs);
+// console.log(kitten.color);
+
+class worker{
+    constructor(name,surname,rate,days){
+        this.name = name;
+        this.surname = surname;
+        this.rate = rate;
+        this.days = days;
     }
-    return new Maybe ({data: f(this.data), status: this.status})
+    getSalary(){
+        return this.rate * this.days;
+    }
+    fullName(){
+        return this.name + ' ' + this.surname;
+    }
 }
-
-Maybe.prototype.getOrElse = function (msg){
-    if (this.status) return this.data
-    return msg
-}
-
-function Number(data){
-    let status = (typeof data === 'string')
-    Maybe.call(this, {data, status})
-}
-Number.prototype = Object.create(Maybe.prototype)
-function String(data){
-    let status = (typeof data === 'string')
-    Maybe.call(this, {data, status})
-}
-
-String.prototype = Object.create(Maybe.prototype)
-const increment = num => num + 1
-const split = str => str.split('')
-let foop = 12
-foop.split('')
+worker = new worker('Andrey', 'Makeenko', 100, 21);
+console.log(worker.name);
+console.log(worker.surname);
+console.log(worker.getSalary());
+console.log(worker.fullName());
